@@ -344,6 +344,70 @@
       "style" : { },
       "type" : "org.apache.nifi.processors.standard.InvokeHTTP",
       "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "runtime-snowflake-processors-nar",
+        "group" : "com.snowflake.openflow.runtime",
+        "version" : "2025.10.30.21"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "PRIMARY",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a7a91308-2a44-3fcc-accd-690a5340502e",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ConsumeSnowflakeStream",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -648.0,
+        "y" : -48.0
+      },
+      "properties" : {
+        "Max Chunk Size" : "1000"
+      },
+      "propertyDescriptors" : {
+        "Max Chunk Size" : {
+          "displayName" : "Max Chunk Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Chunk Size",
+          "sensitive" : false
+        },
+        "Snowflake Connection Service" : {
+          "displayName" : "Snowflake Connection Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Snowflake Connection Service",
+          "sensitive" : false
+        },
+        "Record Writer" : {
+          "displayName" : "Record Writer",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Writer",
+          "sensitive" : false
+        },
+        "Stream Name" : {
+          "displayName" : "Stream Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stream Name",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "com.snowflake.openflow.runtime.processors.snowflake.ConsumeSnowflakeStream",
+      "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
     "scheduledState" : "ENABLED",
@@ -356,6 +420,6 @@
   "snapshotMetadata" : {
     "author" : "FWANG",
     "flowIdentifier" : "feiw-git",
-    "timestamp" : 1762432901023
+    "timestamp" : 1762433456761
   }
 }
