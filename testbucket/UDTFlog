@@ -1,0 +1,14 @@
+https://snowflakecomputing.atlassian.net/wiki/spaces/gsrl/pages/2823389185/NEW+Python+UDFs+UDTFs+Overview+Troubleshooting
+
+
+Issue: Select UDF statement does not return results after running for many minutes and the query has an error message as SQL execution canceled in the query history page.
+Root cause: Having ENABLE_USER_LOGGER parameter set to true
+Solution: Details of the issue are captured in this Jira - https://snowflakecomputing.atlassian.net/browse/SNOW-683840
+If the customer account is using Event Table logging framework, then they might have these values set to true:
+ENABLE_USER_LOGGER = true
+ENABLE_EVENT_TABLES= true
+The recommendation is to have ENABLE_PYTHON_UDF_LOGGING= true.  If the customer is also using Python UDTF, then ENABLE_PYTHON_UDTF_EVENT_LOGGING should also be set to true. Note: Per Engineering, this will be resolved once event logging goes into PuPr.
+Related case no: https://snowforce.lightning.force.com/lightning/r/Case/5003r00001X3oEgAAJ/view
+
+
+https://snowflakecomputing.atlassian.net/wiki/spaces/EN/pages/4413817149/Snowpark+Internal+Logging+-+Guide
