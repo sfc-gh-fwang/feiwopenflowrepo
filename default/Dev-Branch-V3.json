@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1762434306298,
     "description" : "Dev-Branch-V3",
@@ -7,5 +8,242 @@
     "name" : "Dev-Branch-V3",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ ],
+    "controllerServices" : [ ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "maxConcurrentTasks" : 1,
+    "name" : "fwang-git-import",
+    "outputPorts" : [ ],
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ {
+      "comments" : "",
+      "componentType" : "PROCESS_GROUP",
+      "connections" : [ ],
+      "controllerServices" : [ ],
+      "defaultBackPressureDataSizeThreshold" : "1 GB",
+      "defaultBackPressureObjectThreshold" : 10000,
+      "defaultFlowFileExpiration" : "0 sec",
+      "executionEngine" : "INHERITED",
+      "flowFileConcurrency" : "UNBOUNDED",
+      "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+      "funnels" : [ ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "2803f869-67d6-37e8-9180-7ccae95a0316",
+      "inputPorts" : [ ],
+      "labels" : [ ],
+      "maxConcurrentTasks" : 1,
+      "name" : "fwang-git",
+      "outputPorts" : [ ],
+      "position" : {
+        "x" : -372.50011755421474,
+        "y" : -386.00001996798073
+      },
+      "processGroups" : [ ],
+      "processors" : [ ],
+      "remoteProcessGroups" : [ ],
+      "scheduledState" : "ENABLED",
+      "statelessFlowTimeout" : "1 min",
+      "versionedFlowCoordinates" : {
+        "branch" : "dev",
+        "bucketId" : "default",
+        "flowId" : "feiw-git",
+        "version" : "68109c17a0fdf4c9acad91292ea8b7fd4f791cdf"
+      }
+    } ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "runtime-database-cdc-processors-nar",
+        "group" : "com.snowflake.openflow.runtime",
+        "version" : "2025.10.30.21"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "PRIMARY",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a780e586-3543-3605-9c4a-8cb78c9a4dbb",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "CaptureChangeMySQL",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -360.0,
+        "y" : -152.0
+      },
+      "properties" : {
+        "Max Queue Size" : "10000",
+        "Max Batch Size" : "10000",
+        "Re-read Tables in State" : "New",
+        "SSL Mode" : "DISABLED",
+        "Connection Timeout" : "10s",
+        "Max Batch Wait Time" : "5 sec",
+        "Starting Binlog Position" : "Latest",
+        "Server ID Strategy" : "COMPONENT_ID"
+      },
+      "propertyDescriptors" : {
+        "JDBC Driver Location" : {
+          "displayName" : "JDBC Driver Location",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "JDBC Driver Location",
+          "resourceDefinition" : {
+            "cardinality" : "MULTIPLE",
+            "resourceTypes" : [ "DIRECTORY", "FILE", "URL" ]
+          },
+          "sensitive" : false
+        },
+        "Max Queue Size" : {
+          "displayName" : "Max Queue Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Queue Size",
+          "sensitive" : false
+        },
+        "Max Batch Size" : {
+          "displayName" : "Max Batch Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Batch Size",
+          "sensitive" : false
+        },
+        "Re-read Tables in State" : {
+          "displayName" : "Re-read Tables in State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Re-read Tables in State",
+          "sensitive" : false
+        },
+        "Column Filter Store" : {
+          "displayName" : "Column Filter Store",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Column Filter Store",
+          "sensitive" : false
+        },
+        "SSL Mode" : {
+          "displayName" : "SSL Mode",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SSL Mode",
+          "sensitive" : false
+        },
+        "Connection Timeout" : {
+          "displayName" : "Connection Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Connection Timeout",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Max Batch Wait Time" : {
+          "displayName" : "Max Batch Wait Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Batch Wait Time",
+          "sensitive" : false
+        },
+        "Table State Store" : {
+          "displayName" : "Table State Store",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Table State Store",
+          "sensitive" : false
+        },
+        "JDBC URL" : {
+          "displayName" : "JDBC URL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "JDBC URL",
+          "sensitive" : false
+        },
+        "Server ID" : {
+          "displayName" : "Server ID",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Server ID",
+          "sensitive" : false
+        },
+        "Username" : {
+          "displayName" : "Username",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Username",
+          "sensitive" : false
+        },
+        "Record Writer" : {
+          "displayName" : "Record Writer",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Writer",
+          "sensitive" : false
+        },
+        "Starting Binlog Position" : {
+          "displayName" : "Starting Binlog Position",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Starting Binlog Position",
+          "sensitive" : false
+        },
+        "Server ID Strategy" : {
+          "displayName" : "Server ID Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Server ID Strategy",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "com.snowflake.openflow.runtime.processors.database.CaptureChangeMySQL",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : { },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "FWANG",
+    "flowIdentifier" : "Dev-Branch-V3",
+    "timestamp" : 1762434306799
+  }
 }
